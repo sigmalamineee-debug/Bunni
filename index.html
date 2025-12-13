@@ -65,8 +65,8 @@
                             Roblox Executor
                         </h1>
                         <p class="hero-subtitle">
-                            Bunni provides the most powerful, undetected, and keyless execution experience.
-                            Dominate your favorite games with 100% UNC support.
+                            Bunni provides the most powerful, undetected, and key execution experience.
+                            Dominate your favorite games with 100% UNC support. Bunni the best free executor.
                         </p>
                         <div class="hero-cta">
                             <a href="#download" onclick="switchTab('download')" class="btn-primary btn-lg">
@@ -284,16 +284,6 @@
                         <div class="platform-icon"><i class="fa-brands fa-windows"></i></div>
                         <h3>Windows</h3>
                         <span class="status-badge online">Online</span>
-                    </div>
-                    <div class="platform-card reveal-up" style="transition-delay: 200ms;">
-                        <div class="platform-icon"><i class="fa-brands fa-android"></i></div>
-                        <h3>Android</h3>
-                        <span class="status-badge coming-soon">Coming Soon</span>
-                    </div>
-                    <div class="platform-card reveal-up" style="transition-delay: 300ms;">
-                        <div class="platform-icon"><i class="fa-brands fa-apple"></i></div>
-                        <h3>iOS</h3>
-                        <span class="status-badge coming-soon">Coming Soon</span>
                     </div>
                 </div>
             </section>
@@ -784,8 +774,7 @@
                     <h2>Contact Us</h2>
                     <p>Need help? Join our community.</p>
                 </div>
-                <div class="contact-cards reveal-up"
-                    style="grid-template-columns: 1fr; max-width: 500px; margin: 40px auto;">
+                <div class="contact-cards reveal-up">
                     <div class="contact-card">
                         <i class="fa-brands fa-discord"></i>
                         <h3>Discord Community</h3>
@@ -836,6 +825,12 @@
                     card.style.display = 'none';
                 }
             });
+        }
+
+        // FAQ Toggle Logic
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            item.classList.toggle('active');
         }
 
         // Typing Animation
