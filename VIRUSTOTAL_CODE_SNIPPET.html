@@ -1,0 +1,32 @@
+<!-- REPLACE THIS IN index.html (around line 479-485) -->
+
+<!-- OLD CODE (REMOVE THIS): -->
+<!--
+<div class="trust-item">
+    <i class="fa-solid fa-shield-virus"></i>
+    <a href="#" target="_blank"
+        style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;"
+        onmouseover="this.style.color='var(--primary-color)'"
+        onmouseout="this.style.color='var(--text-secondary)'">VirusTotal Scan</a>
+</div>
+-->
+
+<!-- NEW CODE (USE THIS): -->
+<div class="trust-item">
+    <i class="fa-solid fa-shield-virus"></i>
+    <a href="https://www.virustotal.com/gui/url/YOUR_SCAN_ID_HERE/detection" target="_blank" rel="noopener noreferrer"
+        style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;"
+        onmouseover="this.style.color='var(--primary-color)'"
+        onmouseout="this.style.color='var(--text-secondary)'">VirusTotal Scan</a>
+</div>
+
+<!-- 
+INSTRUCTIONS:
+1. Upload your bunni-installer.exe to https://www.virustotal.com/
+2. After scan completes, copy the URL from your browser
+3. Replace "YOUR_SCAN_ID_HERE" with the actual scan ID from the URL
+4. The link will now open the real VirusTotal scan in a new tab!
+
+Example final URL:
+https://www.virustotal.com/gui/file/abc123def456789.../detection
+-->
