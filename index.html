@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bunni.lol - The Next Generation of Execution</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="bg-glow top-center"></div>
+    <div class="bg-grid"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-wrapper">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Bunni Logo" class="nav-logo">
+                    <span class="brand-name">Bunni</span>
+                </div>
+                <!-- Status Indicator -->
+                <div class="status-indicator">
+                    <span class="status-dot red"></span>
+                    <span class="status-text">Down</span>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="#home" class="nav-tab active" onclick="switchTab('home')">Home</a>
+                <a href="#scripts" class="nav-tab" onclick="switchTab('scripts')">Scripts</a>
+                <a href="#download" class="nav-tab" onclick="switchTab('download')">Download</a>
+                <a href="#resellers" class="nav-tab" onclick="switchTab('resellers')">Resellers</a>
+                <a href="#contact" class="nav-tab" onclick="switchTab('contact')">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="https://discord.gg/bunnilol" target="_blank" class="btn-discord"><i
+                        class="fa-brands fa-discord"></i> Discord</a>
+                <a href="#download" onclick="switchTab('download')" class="btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+
+        <!-- HOME TAB -->
+        <div id="home-tab" class="tab-content active">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-grid">
+                    <div class="hero-text reveal-left">
+                        <div class="hero-badge">
+                            <span class="badge-dot"></span>
+                            <span>v2.4.3 R3 Released</span>
+                        </div>
+                        <h1 class="hero-title">
+                            The <span class="text-gradient">Ultimate</span><br>
+                            Roblox Executor
+                        </h1>
+                        <p class="hero-subtitle">
+                            Bunni provides the most powerful, undetected, and keyless execution experience.
+                            Dominate your favorite games with 100% UNC support.
+                        </p>
+                        <div class="hero-cta">
+                            <a href="#download" onclick="switchTab('download')" class="btn-primary btn-lg">
+                                <i class="fa-solid fa-download"></i> Download Now
+                            </a>
+                            <a href="#features" class="btn-secondary btn-lg">
+                                Learn More
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-value" data-target="100000">0</span>
+                                <span class="stat-label">Users</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" data-target="99.9" data-suffix="%">0</span>
+                                <span class="stat-label">Uptime</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" data-target="0" data-suffix="%">0</span>
+                                <span class="stat-label">Detection</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual reveal-right">
+                        <div class="dashboard-preview-card">
+                            <!-- Window Header -->
+                            <div class="window-header">
+                                <div class="window-controls-left">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <div class="window-title">Bunni Executor</div>
+                            </div>
+
+                            <!-- Editor Area -->
+                            <div class="editor-container">
+                                <div class="line-numbers">
+                                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                                </div>
+                                <div class="code-area">
+                                    <div class="typing-container">
+                                        <span id="typewriter"></span><span class="cursor">|</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section id="features" class="features-section">
+                <div class="section-header reveal-up">
+                    <h2>Why Choose Bunni?</h2>
+                    <p>Engineered for performance, designed for you.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card reveal-up" style="transition-delay: 100ms;">
+                        <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Lightning Fast</h3>
+                        <p>Optimized C++ architecture ensures zero latency execution.</p>
+                    </div>
+                    <div class="feature-card reveal-up" style="transition-delay: 200ms;">
+                        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Undetected</h3>
+                        <p>Advanced bypassing technology keeps your account safe.</p>
+                    </div>
+                    <div class="feature-card reveal-up" style="transition-delay: 300ms;">
+                        <div class="feature-icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>100% UNC</h3>
+                        <p>Full support for the Unified Naming Convention.</p>
+                    </div>
+                    <div class="feature-card reveal-up" style="transition-delay: 400ms;">
+                        <div class="feature-icon"><i class="fa-solid fa-cloud"></i></div>
+                        <h3>Script Hub</h3>
+                        <p>Access thousands of scripts directly from the cloud.</p>
+                    </div>
+                    <div class="feature-card reveal-up" style="transition-delay: 500ms;">
+                        <div class="feature-icon"><i class="fa-solid fa-clone"></i></div>
+                        <h3>Multi-Instance</h3>
+                        <p>Run multiple accounts simultaneously with ease.</p>
+                    </div>
+                    <div class="feature-card reveal-up" style="transition-delay: 600ms;">
+                        <div class="feature-icon"><i class="fa-solid fa-floppy-disk"></i></div>
+                        <h3>Save Instance</h3>
+                        <p>Download maps and assets directly from any game.</p>
+                    </div>
+                    <div class="feature-card reveal-up" style="transition-delay: 700ms;">
+                        <div class="feature-icon"><i class="fa-solid fa-robot"></i></div>
+                        <h3>AI Assistant</h3>
+                        <p>Generate and debug scripts instantly with our AI.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Editor Showcase Section -->
+            <section class="editor-showcase-section">
+                <div class="section-header reveal-up">
+                    <h2>Code to Execution <span class="text-gradient">In Milliseconds</span></h2>
+                    <p>The most advanced script environment ever built for Roblox.</p>
+                </div>
+                <div class="showcase-container reveal-up">
+                    <div class="showcase-visual">
+                        <div class="dashboard-preview-card large">
+                            <div class="window-header">
+                                <div class="window-controls-left">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <div class="window-title">Bunni Editor</div>
+                            </div>
+                            <div class="editor-container">
+                                <div class="line-numbers">
+                                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                                </div>
+                                <div class="code-area">
+                                    <span class="code-keyword">local</span> <span class="code-variable">Library</span> =
+                                    <span class="code-function">loadstring</span>(<span
+                                        class="code-global">game</span>:<span class="code-method">HttpGet</span>(<span
+                                        class="code-string">"https://bunni.lol/lib"</span>))()
+                                    <br>
+                                    <span class="code-variable">Library</span>:<span
+                                        class="code-method">Window</span>(<span class="code-string">"Bunni Hub"</span>)
+                                    <br>
+                                    <span class="code-comment">-- Auto-attach and execute</span>
+                                    <br>
+                                    <span class="code-function">print</span>(<span class="code-string">"Injected
+                                        successfully!"</span>)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showcase-features">
+                        <div class="showcase-item">
+                            <i class="fa-solid fa-bolt"></i>
+                            <h3>Instant Attach</h3>
+                            <p>Inject into any game process in under 50ms with our new engine.</p>
+                        </div>
+                        <div class="showcase-item">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <h3>Smart IntelliSense</h3>
+                            <p>Advanced auto-completion and syntax highlighting for LuaU.</p>
+                        </div>
+                        <div class="showcase-item">
+                            <i class="fa-solid fa-cloud-arrow-down"></i>
+                            <h3>Cloud Scripts</h3>
+                            <p>Load scripts directly from the cloud without downloading files.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <div class="section-header reveal-up">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Everything you need to know about Bunni.</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item reveal-up">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h3>Does Bunni require a key?</h3>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, Bunni uses a key system to ensure the highest quality, security, and consistent
+                                updates for our users. You can easily get a key through our link system.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal-up">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h3>Is it safe to use?</h3>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely. We use advanced encryption and bypassing methods to ensure your account
+                                remains safe from bans.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal-up">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h3>Which platforms are supported?</h3>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Currently, Bunni supports Windows 10 and Windows 11. Support for other platforms is
+                                planned for future updates.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal-up">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h3>How do I execute scripts?</h3>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Simply paste your script into the editor, attach Bunni to Roblox, and click Execute. It's
+                                that simple!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cross-Platform Section -->
+            <section class="cross-platform-section">
+                <div class="section-header reveal-up">
+                    <h2>Cross-Platform <span class="text-gradient">Excellence</span></h2>
+                    <p>Experience Bunni on your favorite devices.</p>
+                </div>
+                <div class="platform-grid">
+                    <div class="platform-card reveal-up" style="transition-delay: 100ms;">
+                        <div class="platform-icon"><i class="fa-brands fa-windows"></i></div>
+                        <h3>Windows</h3>
+                        <span class="status-badge online">Online</span>
+                    </div>
+                    <div class="platform-card reveal-up" style="transition-delay: 200ms;">
+                        <div class="platform-icon"><i class="fa-brands fa-android"></i></div>
+                        <h3>Android</h3>
+                        <span class="status-badge coming-soon">Coming Soon</span>
+                    </div>
+                    <div class="platform-card reveal-up" style="transition-delay: 300ms;">
+                        <div class="platform-icon"><i class="fa-brands fa-apple"></i></div>
+                        <h3>iOS</h3>
+                        <span class="status-badge coming-soon">Coming Soon</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SCRIPTS TAB -->
+        <div id="scripts-tab" class="tab-content">
+            <section class="scripts-section">
+                <div class="hub-header-title reveal-up">
+                    <h2>Script Hub <span class="powered-by">Powered by ScriptBlox</span></h2>
+                </div>
+
+                <div class="hub-stats-badges reveal-up">
+                    <div class="stat-badge"><span class="dot green"></span> Live</div>
+                    <div class="stat-badge"><span class="dot blue"></span> Cloud</div>
+                    <div class="stat-badge"><span class="dot purple"></span> Verified</div>
+                    <div class="stat-badge"><span class="dot yellow"></span> Safe</div>
+                </div>
+
+                <div class="hub-search-container reveal-up">
+                    <input type="text" placeholder="Search scripts..." class="hub-search-input">
+                </div>
+
+                <div class="scripts-grid-dense">
+                    <!-- Card 1 -->
+                    <div class="hub-card reveal-up" style="transition-delay: 50ms;">
+                        <div class="hub-thumbnail image" style="background-image: url('assets/thumb_universal.png');">
+                        </div>
+                        <div class="hub-card-content">
+                            <h3 class="hub-script-title">Vexilus Labs</h3>
+                            <p class="hub-script-game">Universal Script <i class="fa-solid fa-thumbtack"></i></p>
+                            <button class="btn-open-editor">Open in Editor</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="hub-card reveal-up" style="transition-delay: 100ms;">
+                        <div class="hub-thumbnail image" style="background-image: url('assets/thumb_fps.png');">
+                        </div>
+                        <div class="hub-card-content">
+                            <h3 class="hub-script-title">ProjectAuto AutoFarm</h3>
+                            <p class="hub-script-game">[🔥 Bionic] Jailbreak</p>
+                            <button class="btn-open-editor">Open in Editor</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="hub-card reveal-up" style="transition-delay: 150ms;">
+                        <div class="hub-thumbnail image" style="background-image: url('assets/thumb_sim.png');">
+                        </div>
+                        <div class="hub-card-content">
+                            <h3 class="hub-script-title">Troll GUI</h3>
+                            <p class="hub-script-game">Troll is a pinning tower 2</p>
+                            <button class="btn-open-editor">Open in Editor</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="hub-card reveal-up" style="transition-delay: 200ms;">
+                        <div class="hub-thumbnail image" style="background-image: url('assets/thumb_sim.png');">
+                        </div>
+                        <div class="hub-card-content">
+                            <h3 class="hub-script-title">fe krystal dance v3</h3>
+                            <p class="hub-script-game">[UP] Just a baseplate.</p>
+                            <button class="btn-open-editor">Open in Editor</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="hub-card reveal-up" style="transition-delay: 250ms;">
+                        <div class="hub-thumbnail image" style="background-image: url('assets/thumb_rpg.png');">
+                        </div>
+                        <div class="hub-card-content">
+                            <h3 class="hub-script-title">OP LAST LETTER</h3>
+                            <p class="hub-script-game">Build & Donate 💸</p>
+                            <button class="btn-open-editor">Open in Editor</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="hub-card reveal-up" style="transition-delay: 300ms;">
+                        <div class="hub-thumbnail image" style="background-image: url('assets/thumb_rpg.png');">
+                        </div>
+                        <div class="hub-card-content">
+                            <h3 class="hub-script-title">Best 99N Script</h3>
+                            <p class="hub-script-game">99 Nights in the Forest →</p>
+                            <button class="btn-open-editor">Open in Editor</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="hub-card reveal-up" style="transition-delay: 350ms;">
+                        <div class="hub-thumbnail image" style="background-image: url('assets/thumb_universal.png');">
+                        </div>
+                        <div class="hub-card-content">
+                            <h3 class="hub-script-title">4nuj fly</h3>
+                            <p class="hub-script-game">Universal Script <i class="fa-solid fa-thumbtack"></i></p>
+                            <button class="btn-open-editor">Open in Editor</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="hub-card reveal-up" style="transition-delay: 400ms;">
+                        <div class="hub-thumbnail image" style="background-image: url('assets/thumb_rpg.png');">
+                        </div>
+                        <div class="hub-card-content">
+                            <h3 class="hub-script-title">Voidware</h3>
+                            <p class="hub-script-game">99 Nights in the Forest →</p>
+                            <button class="btn-open-editor">Open in Editor</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 9 -->
+                    <div class="hub-card reveal-up" style="transition-delay: 450ms;">
+                        <div class="hub-thumbnail image" style="background-image: url('assets/thumb_sim.png');">
+                        </div>
+                        <div class="hub-card-content">
+                            <h3 class="hub-script-title">Glo hub keyless</h3>
+                            <p class="hub-script-game">Murder Mystery 2</p>
+                            <button class="btn-open-editor">Open in Editor</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 10 -->
+                    <div class="hub-card reveal-up" style="transition-delay: 500ms;">
+                        <div class="hub-thumbnail image" style="background-image: url('assets/thumb_universal.png');">
+                        </div>
+                        <div class="hub-card-content">
+                            <h3 class="hub-script-title">TALENTLESS HUB</h3>
+                            <p class="hub-script-game">Universal Script <i class="fa-solid fa-thumbtack"></i></p>
+                            <button class="btn-open-editor">Open in Editor</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 11 -->
+                    <div class="hub-card reveal-up" style="transition-delay: 550ms;">
+                        <div class="hub-thumbnail image" style="background-image: url('assets/thumb_sim.png');">
+                        </div>
+                        <div class="hub-card-content">
+                            <h3 class="hub-script-title">Coquette hub Plane</h3>
+                            <p class="hub-script-game">✈️ Build A Plane</p>
+                            <button class="btn-open-editor">Open in Editor</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 12 -->
+                    <div class="hub-card reveal-up" style="transition-delay: 600ms;">
+                        <div class="hub-thumbnail image" style="background-image: url('assets/thumb_fps.png');">
+                        </div>
+                        <div class="hub-card-content">
+                            <h3 class="hub-script-title">Bypass Anti Cheat</h3>
+                            <p class="hub-script-game">Survive and Kill the Killers</p>
+                            <button class="btn-open-editor">Open in Editor</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- DOWNLOAD TAB -->
+        <div id="download-tab" class="tab-content">
+            <section class="download-section">
+                <div class="section-header reveal-up">
+                    <h2>Download Bunni</h2>
+                    <p>Get the latest version of the best Roblox executor.</p>
+                </div>
+                <div class="download-card reveal-up">
+                    <div class="download-icon">
+                        <img src="logo.png" alt="Bunni Logo">
+                    </div>
+                    <h3>Bunni Installer</h3>
+                    <p class="version">Version 2.4.3 R3 • Windows 10/11</p>
+                    <a href="https://cdn.discordapp.com/attachments/1347245161327100036/1435137622111682560/bunni-installer.exe?ex=693da150&is=693c4fd0&hm=87d1c3d04de7082611f6d6eac1a7cd03abeafe2f9442238565f443e9590e66e8&"
+                        class="btn-primary btn-xl">
+                        <i class="fa-solid fa-download"></i> Download Now
+                    </a>
+                    <p class="download-note">By downloading, you agree to our Terms of Service.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- RESELLERS TAB -->
+        <div id="resellers-tab" class="tab-content">
+            <section class="resellers-section">
+                <div class="section-header reveal-up">
+                    <h2>Official Resellers</h2>
+                    <p>Purchase premium keys from our trusted partners.</p>
+                </div>
+
+                <!-- Reseller Search & Filter -->
+                <div class="reseller-controls reveal-up">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" placeholder="Search resellers..." onkeyup="filterResellers(this.value)">
+                    </div>
+                    <div class="filter-tabs">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">PayPal</button>
+                        <button class="filter-btn">Crypto</button>
+                        <button class="filter-btn">Card</button>
+                    </div>
+                </div>
+
+                <div class="resellers-grid">
+                    <!-- Featured Reseller -->
+                    <a href="https://perfectproducts.xyz/" target="_blank" class="reseller-card featured reveal-up"
+                        style="transition-delay: 50ms;">
+                        <div class="card-badge">Featured</div>
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                            <div class="reseller-info">
+                                <h3>Perfect Products</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-paypal" title="PayPal"></i>
+                            <i class="fa-brands fa-bitcoin" title="Crypto"></i>
+                            <i class="fa-solid fa-credit-card" title="Card"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <!-- Standard Resellers -->
+                    <a href="https://buybunni.xyz/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 100ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-rabbit"></i></div>
+                            <div class="reseller-info">
+                                <h3>Buy Bunni</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
+                            <i class="fa-brands fa-bitcoin"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://valary.cc/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 150ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-v"></i></div>
+                            <div class="reseller-info">
+                                <h3>Valary.cc</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-bitcoin"></i>
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://premium-keys.sellhub.cx/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 200ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-key"></i></div>
+                            <div class="reseller-info">
+                                <h3>Premium Keys</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
+                            <i class="fa-brands fa-bitcoin"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://robloxcheatz.com/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 250ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-gamepad"></i></div>
+                            <div class="reseller-info">
+                                <h3>Roblox Cheatz</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://silverkeys.mysellauth.com/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 300ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-key"></i></div>
+                            <div class="reseller-info">
+                                <h3>SilverKeys</h3>
+                                <span class="stock-status low-stock">Low Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-bitcoin"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://emporium.epikest.moe/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 350ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-shop"></i></div>
+                            <div class="reseller-info">
+                                <h3>Emporium</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
+                            <i class="fa-brands fa-bitcoin"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://instakeys.sellhub.cx/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 400ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-bolt"></i></div>
+                            <div class="reseller-info">
+                                <h3>Insta Keys</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-bitcoin"></i>
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://rumblehub.mysellauth.com/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 450ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-bomb"></i></div>
+                            <div class="reseller-info">
+                                <h3>Rumble Hub</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://xploits.cc/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 500ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-code"></i></div>
+                            <div class="reseller-info">
+                                <h3>XPloits.CC</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-bitcoin"></i>
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://noxhub.store/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 550ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-moon"></i></div>
+                            <div class="reseller-info">
+                                <h3>Nox Hub</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
+                            <i class="fa-brands fa-bitcoin"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://tyronex.sellhub.cx/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 600ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-t"></i></div>
+                            <div class="reseller-info">
+                                <h3>Tyronex</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-bitcoin"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://infinitycheats.gg/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 650ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-infinity"></i></div>
+                            <div class="reseller-info">
+                                <h3>Infinity Cheats</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
+                            <i class="fa-brands fa-bitcoin"></i>
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://bloxkeys.com/products" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 700ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-key"></i></div>
+                            <div class="reseller-info">
+                                <h3>BloxKeys</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
+                            <i class="fa-brands fa-bitcoin"></i>
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://bloxify.cc/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 750ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-b"></i></div>
+                            <div class="reseller-info">
+                                <h3>Bloxify</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-bitcoin"></i>
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://expresskeys.store" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 800ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-e"></i></div>
+                            <div class="reseller-info">
+                                <h3>eXpress Keys</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
+                            <i class="fa-brands fa-bitcoin"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://wyv.gg/product/bunni-executor/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 850ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-w"></i></div>
+                            <div class="reseller-info">
+                                <h3>Wyv</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
+                            <i class="fa-brands fa-bitcoin"></i>
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- CONTACT TAB -->
+        <div id="contact-tab" class="tab-content">
+            <section class="contact-section">
+                <div class="section-header reveal-up">
+                    <h2>Contact Us</h2>
+                    <p>Need help? Join our community.</p>
+                </div>
+                <div class="contact-cards reveal-up"
+                    style="grid-template-columns: 1fr; max-width: 500px; margin: 40px auto;">
+                    <div class="contact-card">
+                        <i class="fa-brands fa-discord"></i>
+                        <h3>Discord Community</h3>
+                        <p>Join 50,000+ members for support and updates.</p>
+                        <a href="https://discord.gg/bunnilol" target="_blank" class="btn-secondary">Join Server</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Bunni Logo">
+                <span>Bunni.lol</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Status</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2025 Bunni.lol. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const config = {
+            version: "2.4.3 R3",
+            status: "Down",
+            downloadLink: "https://cdn.discordapp.com/attachments/1347245161327100036/1435137622111682560/bunni-installer.exe?ex=693da150&is=693c4fd0&hm=87d1c3d04de7082611f6d6eac1a7cd03abeafe2f9442238565f443e9590e66e8&"
+        };
+
+        // Reseller Filter Logic
+        function filterResellers(query) {
+            const cards = document.querySelectorAll('.reseller-card');
+            query = query.toLowerCase();
+
+            cards.forEach(card => {
+                const name = card.querySelector('h3').innerText.toLowerCase();
+                if (name.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Typing Animation
+        const textToType = `print("Hello Bunni User!")
+local api = loadstring(game:HttpGet(...))()
+api.Init()
+-- Executing script...`;
+
+        const typeWriterElement = document.getElementById('typewriter');
+        let i = 0;
+
+        function typeWriter() {
+            if (!typeWriterElement) return;
+
+            if (i < textToType.length) {
+                if (textToType.charAt(i) === '\n') {
+                    typeWriterElement.innerHTML += '<br>';
+                } else {
+                    typeWriterElement.innerHTML += textToType.charAt(i);
+                }
+                i++;
+                setTimeout(typeWriter, 50);
+            } else {
+                setTimeout(() => {
+                    typeWriterElement.innerHTML = '';
+                    i = 0;
+                    typeWriter();
+                }, 3000);
+            }
+        }
+
+        // Tab Switching Logic
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.querySelectorAll('.nav-tab').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            document.getElementById(tabName + '-tab').classList.add('active');
+            document.querySelector(`.nav-tab[href="#${tabName}"]`).classList.add('active');
+
+            // Re-trigger animations
+            const activeTab = document.getElementById(tabName + '-tab');
+            const animatedElements = activeTab.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
+            animatedElements.forEach(el => {
+                el.classList.remove('visible');
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, 100);
+            });
+        }
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Start typing animation
+            typeWriter();
+
+            // Count up animation for stats
+            const stats = document.querySelectorAll('.stat-value');
+            stats.forEach(stat => {
+                const target = parseFloat(stat.getAttribute('data-target'));
+                const suffix = stat.getAttribute('data-suffix') || '';
+                const duration = 2000; // 2 seconds
+                const start = 0;
+                const startTime = performance.now();
+
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+
+                    // Ease out quart
+                    const ease = 1 - Math.pow(1 - progress, 4);
+
+                    const current = start + (target - start) * ease;
+
+                    if (target % 1 === 0) {
+                        stat.innerText = Math.floor(current).toLocaleString() + suffix;
+                    } else {
+                        stat.innerText = current.toFixed(1) + suffix;
+                    }
+
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    } else {
+                        stat.innerText = target.toLocaleString() + suffix;
+                    }
+                }
+
+                requestAnimationFrame(update);
+            });
+        });
+    </script>
+</body>
+
+</html>
