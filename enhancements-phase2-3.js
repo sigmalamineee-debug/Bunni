@@ -165,7 +165,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loadingScreen) {
         setTimeout(() => {
             loadingScreen.classList.add('hidden');
-            setTimeout(() => loadingScreen.remove(), 500);
+            setTimeout(() => {
+                loadingScreen.remove();
+
+                // Signal that loading is complete
+                window.loadingComplete = true;
+
+                // Trigger animations for elements already in view
+                document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-text-line, .scroll-indicator').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('visible');
+                    }
+                });
+
+            }, 500);
         }, 1500);
     }
 

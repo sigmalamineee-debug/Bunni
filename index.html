@@ -21,7 +21,7 @@
     <!-- Loading Screen -->
     <div class="loading-screen">
         <div class="loading-logo-container">
-            <i class="fa-solid fa-rabbit loading-logo" style="font-size: 4rem; color: var(--primary-color);"></i>
+            <img src="logo.png" alt="Bunni Logo" class="loading-logo-img">
         </div>
         <div class="loading-bar">
             <div class="loading-progress"></div>
@@ -55,6 +55,9 @@
             </div>
 
             <div class="nav-actions">
+                <button class="theme-toggle-nav" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
                 <a href="https://discord.gg/bunnilol" target="_blank" class="btn-discord"><i
                         class="fa-brands fa-discord"></i> Discord</a>
                 <a href="#download" onclick="switchTab('download')" class="btn-primary">Get Started</a>
@@ -70,20 +73,25 @@
             <!-- Hero Section -->
             <section class="hero-section">
                 <div class="hero-grid">
-                    <div class="hero-text reveal-left">
-                        <div class="hero-badge">
+                    <!-- Removed reveal-left from parent to stop "expand" effect on Title -->
+                    <div class="hero-text">
+                        <div class="hero-badge reveal-left">
                             <span class="badge-dot"></span>
                             <span>v2.4.3 R3 Released</span>
                         </div>
-                        <h1 class="hero-title glitch-text">
-                            The <span class="text-gradient">Ultimate</span><br>
-                            Roblox Executor
+                        <!-- MASKED REVEAL TITLE (Handled by god-tier-ui.css only) -->
+                        <h1 class="hero-title">
+                            <div class="reveal-text-wrapper"><span class="reveal-text-line">The <span
+                                        class="text-gradient">Ultimate</span></span></div>
+                            <div class="reveal-text-wrapper"><span class="reveal-text-line">Roblox
+                                    Executor</span></div>
                         </h1>
-                        <p class="hero-subtitle">
+                        <p class="hero-subtitle reveal-left" style="transition-delay: 100ms;">
                             Bunni provides the most powerful, undetected, and key execution experience.
-                            Dominate your favorite games with 100% UNC support. Bunni the best free executor.
+                            Dominate your favorite games with 100% UNC support. Bunni the best free
+                            executor.
                         </p>
-                        <div class="hero-cta">
+                        <div class="hero-cta reveal-left" style="transition-delay: 200ms;">
                             <a href="#download" onclick="switchTab('download')" class="btn-primary btn-lg">
                                 <i class="fa-solid fa-download"></i> Download Now
                             </a>
@@ -91,7 +99,7 @@
                                 Learn More
                             </a>
                         </div>
-                        <div class="hero-stats">
+                        <div class="hero-stats reveal-left" style="transition-delay: 300ms;">
                             <div class="stat-item">
                                 <span class="stat-value" data-target="100000">0</span>
                                 <span class="stat-label">Users</span>
@@ -132,6 +140,14 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Scroll Down Indicator -->
+                <div class="scroll-indicator">
+                    <div class="mouse-icon">
+                        <div class="mouse-wheel"></div>
+                    </div>
+                    <div class="scroll-arrow"></div>
                 </div>
             </section>
 
@@ -233,7 +249,8 @@
                         <div class="bento-content">
                             <i class="fa-solid fa-bolt bento-icon-large"></i>
                             <h3>Lightning Fast Execution</h3>
-                            <p>Our custom C++ engine delivers zero-latency script execution. Optimized for low-end PCs
+                            <p>Our custom C++ engine delivers zero-latency script execution. Optimized for
+                                low-end PCs
                                 to high-end rigs.</p>
                         </div>
                         <div class="bento-visual"
@@ -246,7 +263,8 @@
                         <div class="bento-content">
                             <i class="fa-solid fa-code bento-icon-large" style="font-size: 2.5rem;"></i>
                             <h3>100% UNC Supported</h3>
-                            <p>Full compatibility with the Unified Naming Convention. Run any script, anywhere.</p>
+                            <p>Full compatibility with the Unified Naming Convention. Run any script,
+                                anywhere.</p>
                         </div>
                     </div>
 
@@ -255,16 +273,20 @@
                         <div class="bento-content">
                             <i class="fa-solid fa-cloud bento-icon-large"></i>
                             <h3>Cloud Script Hub</h3>
-                            <p>Access thousands of scripts instantly. No downloads required. Just click and play.</p>
+                            <p>Access thousands of scripts instantly. No downloads required. Just click and
+                                play.</p>
                             <ul style="margin-top: 1rem; list-style: none; color: var(--text-secondary);">
                                 <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check"
-                                        style="color: var(--primary-color); margin-right: 0.5rem;"></i> Verified Scripts
+                                        style="color: var(--primary-color); margin-right: 0.5rem;"></i>
+                                    Verified Scripts
                                 </li>
                                 <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check"
-                                        style="color: var(--primary-color); margin-right: 0.5rem;"></i> Community Rated
+                                        style="color: var(--primary-color); margin-right: 0.5rem;"></i>
+                                    Community Rated
                                 </li>
                                 <li><i class="fa-solid fa-check"
-                                        style="color: var(--primary-color); margin-right: 0.5rem;"></i> Auto-Updates
+                                        style="color: var(--primary-color); margin-right: 0.5rem;"></i>
+                                    Auto-Updates
                                 </li>
                             </ul>
                         </div>
@@ -281,51 +303,15 @@
 
                     <!-- Small Card: AI -->
                     <div class="bento-card reveal-up" style="transition-delay: 400ms;">
-                        <div class="bento-content">
-                            <i class="fa-solid fa-robot bento-icon-large" style="font-size: 2rem;"></i>
-                            <h3>AI Assistant</h3>
-                            <p>Debug scripts with AI.</p>
+                        <div class="marquee-item">
+                            <i class="fa-solid fa-skull"></i>
+                            <span>Murder Mystery 2</span>
+                        </div>
+                        <div class="marquee-item">
+                            <i class="fa-solid fa-khanda"></i>
+                            <span>Blade Ball</span>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <!-- Infinite Game Marquee -->
-            <section class="marquee-section">
-                <div class="marquee-track">
-                    <div class="marquee-item">
-                        <i class="fa-solid fa-gamepad"></i>
-                        <span>Blox Fruits</span>
-                    </div>
-                    <div class="marquee-item">
-                        <i class="fa-solid fa-paw"></i>
-                        <span>Pet Sim 99</span>
-                    </div>
-                    <div class="marquee-item">
-                        <i class="fa-solid fa-gun"></i>
-                        <span>Da Hood</span>
-                    </div>
-                    <div class="marquee-item">
-                        <i class="fa-solid fa-city"></i>
-                        <span>Brookhaven</span>
-                    </div>
-                    <div class="marquee-item">
-                        <i class="fa-solid fa-ghost"></i>
-                        <span>Doors</span>
-                    </div>
-                    <div class="marquee-item">
-                        <i class="fa-solid fa-car"></i>
-                        <span>Jailbreak</span>
-                    </div>
-                    <div class="marquee-item">
-                        <i class="fa-solid fa-skull"></i>
-                        <span>Murder Mystery 2</span>
-                    </div>
-                    <div class="marquee-item">
-                        <i class="fa-solid fa-khanda"></i>
-                        <span>Blade Ball</span>
-                    </div>
-                </div>
             </section>
 
             <!-- Editor Showcase Section -->
@@ -356,7 +342,8 @@
                                         class="code-string">"https://bunni.lol/lib"</span>))()
                                     <br>
                                     <span class="code-variable">Library</span>:<span
-                                        class="code-method">Window</span>(<span class="code-string">"Bunni Hub"</span>)
+                                        class="code-method">Window</span>(<span class="code-string">"Bunni
+                                        Hub"</span>)
                                     <br>
                                     <span class="code-comment">-- Auto-attach and execute</span>
                                     <br>
@@ -399,7 +386,8 @@
                             <i class="fa-solid fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Yes, Bunni uses a key system to ensure the highest quality, security, and consistent
+                            <p>Yes, Bunni uses a key system to ensure the highest quality, security, and
+                                consistent
                                 updates for our users. You can easily get a key through our link system.</p>
                         </div>
                     </div>
@@ -409,7 +397,8 @@
                             <i class="fa-solid fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Absolutely. We use advanced encryption and bypassing methods to ensure your account
+                            <p>Absolutely. We use advanced encryption and bypassing methods to ensure your
+                                account
                                 remains safe from bans.</p>
                         </div>
                     </div>
@@ -419,7 +408,8 @@
                             <i class="fa-solid fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Currently, Bunni supports Windows 10 and Windows 11. Support for other platforms is
+                            <p>Currently, Bunni supports Windows 10 and Windows 11. Support for other platforms
+                                is
                                 planned for future updates.</p>
                         </div>
                     </div>
@@ -429,7 +419,8 @@
                             <i class="fa-solid fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Simply paste your script into the editor, attach Bunni to Roblox, and click Execute. It's
+                            <p>Simply paste your script into the editor, attach Bunni to Roblox, and click
+                                Execute. It's
                                 that simple!</p>
                         </div>
                     </div>
@@ -799,7 +790,7 @@
                         <div class="reseller-header">
                             <div class="reseller-icon"><i class="fa-solid fa-bolt"></i></div>
                             <div class="reseller-info">
-                                <h3>Insta Keys</h3>
+                                <h3>InstaKeys</h3>
                                 <span class="stock-status in-stock">In Stock</span>
                             </div>
                         </div>
@@ -810,8 +801,57 @@
                         <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
                     </a>
 
-                    <a href="https://rumblehub.mysellauth.com/" target="_blank" class="reseller-card reveal-up"
+                    <a href="https://wyv.gg/ref/olemad/" target="_blank" class="reseller-card reveal-up"
                         style="transition-delay: 450ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-dragon"></i></div>
+                            <div class="reseller-info">
+                                <h3>Wyv.gg</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
+                            <i class="fa-brands fa-bitcoin"></i>
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://bloxkeys.com/?ref=JJBlox" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 500ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-cube"></i></div>
+                            <div class="reseller-info">
+                                <h3>BloxKeys</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://buywave.xyz/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 550ms;">
+                        <div class="reseller-header">
+                            <div class="reseller-icon"><i class="fa-solid fa-water"></i></div>
+                            <div class="reseller-info">
+                                <h3>BuyWave</h3>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
+                            <i class="fa-brands fa-bitcoin"></i>
+                        </div>
+                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    </a>
+
+                    <a href="https://rumblehub.mysellauth.com/" target="_blank" class="reseller-card reveal-up"
+                        style="transition-delay: 600ms;">
                         <div class="reseller-header">
                             <div class="reseller-icon"><i class="fa-solid fa-bomb"></i></div>
                             <div class="reseller-info">
@@ -821,12 +861,13 @@
                         </div>
                         <div class="payment-methods">
                             <i class="fa-brands fa-paypal"></i>
+                            <i class="fa-brands fa-bitcoin"></i>
                         </div>
                         <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
                     </a>
 
                     <a href="https://xploits.cc/" target="_blank" class="reseller-card reveal-up"
-                        style="transition-delay: 500ms;">
+                        style="transition-delay: 650ms;">
                         <div class="reseller-header">
                             <div class="reseller-icon"><i class="fa-solid fa-code"></i></div>
                             <div class="reseller-info">
@@ -835,14 +876,14 @@
                             </div>
                         </div>
                         <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
                             <i class="fa-brands fa-bitcoin"></i>
-                            <i class="fa-solid fa-credit-card"></i>
                         </div>
                         <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
                     </a>
 
                     <a href="https://noxhub.store/" target="_blank" class="reseller-card reveal-up"
-                        style="transition-delay: 550ms;">
+                        style="transition-delay: 700ms;">
                         <div class="reseller-header">
                             <div class="reseller-icon"><i class="fa-solid fa-moon"></i></div>
                             <div class="reseller-info">
@@ -858,7 +899,7 @@
                     </a>
 
                     <a href="https://tyronex.sellhub.cx/" target="_blank" class="reseller-card reveal-up"
-                        style="transition-delay: 600ms;">
+                        style="transition-delay: 750ms;">
                         <div class="reseller-header">
                             <div class="reseller-icon"><i class="fa-solid fa-t"></i></div>
                             <div class="reseller-info">
@@ -867,83 +908,18 @@
                             </div>
                         </div>
                         <div class="payment-methods">
+                            <i class="fa-brands fa-paypal"></i>
                             <i class="fa-brands fa-bitcoin"></i>
                         </div>
                         <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
                     </a>
 
                     <a href="https://infinitycheats.gg/" target="_blank" class="reseller-card reveal-up"
-                        style="transition-delay: 650ms;">
+                        style="transition-delay: 800ms;">
                         <div class="reseller-header">
                             <div class="reseller-icon"><i class="fa-solid fa-infinity"></i></div>
                             <div class="reseller-info">
                                 <h3>Infinity Cheats</h3>
-                                <span class="stock-status in-stock">In Stock</span>
-                            </div>
-                        </div>
-                        <div class="payment-methods">
-                            <i class="fa-brands fa-paypal"></i>
-                            <i class="fa-brands fa-bitcoin"></i>
-                            <i class="fa-solid fa-credit-card"></i>
-                        </div>
-                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
-                    </a>
-
-                    <a href="https://bloxkeys.com/products" target="_blank" class="reseller-card reveal-up"
-                        style="transition-delay: 700ms;">
-                        <div class="reseller-header">
-                            <div class="reseller-icon"><i class="fa-solid fa-key"></i></div>
-                            <div class="reseller-info">
-                                <h3>BloxKeys</h3>
-                                <span class="stock-status in-stock">In Stock</span>
-                            </div>
-                        </div>
-                        <div class="payment-methods">
-                            <i class="fa-brands fa-paypal"></i>
-                            <i class="fa-brands fa-bitcoin"></i>
-                            <i class="fa-solid fa-credit-card"></i>
-                        </div>
-                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
-                    </a>
-
-                    <a href="https://bloxify.cc/" target="_blank" class="reseller-card reveal-up"
-                        style="transition-delay: 750ms;">
-                        <div class="reseller-header">
-                            <div class="reseller-icon"><i class="fa-solid fa-b"></i></div>
-                            <div class="reseller-info">
-                                <h3>Bloxify</h3>
-                                <span class="stock-status in-stock">In Stock</span>
-                            </div>
-                        </div>
-                        <div class="payment-methods">
-                            <i class="fa-brands fa-bitcoin"></i>
-                            <i class="fa-solid fa-credit-card"></i>
-                        </div>
-                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
-                    </a>
-
-                    <a href="https://expresskeys.store" target="_blank" class="reseller-card reveal-up"
-                        style="transition-delay: 800ms;">
-                        <div class="reseller-header">
-                            <div class="reseller-icon"><i class="fa-solid fa-e"></i></div>
-                            <div class="reseller-info">
-                                <h3>eXpress Keys</h3>
-                                <span class="stock-status in-stock">In Stock</span>
-                            </div>
-                        </div>
-                        <div class="payment-methods">
-                            <i class="fa-brands fa-paypal"></i>
-                            <i class="fa-brands fa-bitcoin"></i>
-                        </div>
-                        <div class="delivery-badge"><i class="fa-solid fa-bolt"></i> Instant</div>
-                    </a>
-
-                    <a href="https://wyv.gg/product/bunni-executor/" target="_blank" class="reseller-card reveal-up"
-                        style="transition-delay: 850ms;">
-                        <div class="reseller-header">
-                            <div class="reseller-icon"><i class="fa-solid fa-w"></i></div>
-                            <div class="reseller-info">
-                                <h3>Wyv</h3>
                                 <span class="stock-status in-stock">In Stock</span>
                             </div>
                         </div>
@@ -1157,7 +1133,7 @@ api.Init()
 
             // Re-trigger animations
             const activeTab = document.getElementById(tabName + '-tab');
-            const animatedElements = activeTab.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
+            const animatedElements = activeTab.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-text-line, .scroll-indicator');
             animatedElements.forEach(el => {
                 el.classList.remove('visible');
                 setTimeout(() => {
@@ -1173,6 +1149,7 @@ api.Init()
         };
 
         const observer = new IntersectionObserver((entries) => {
+            if (!window.loadingComplete) return; // Wait for loading to finish
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
@@ -1181,7 +1158,7 @@ api.Init()
         }, observerOptions);
 
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
+            document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-text-line, .scroll-indicator').forEach(el => {
                 observer.observe(el);
             });
 

@@ -8,7 +8,6 @@
     width: 100%;
     height: 100%;
     z-index: -2;
-    /* Behind everything */
     overflow: hidden;
     pointer-events: none;
 }
@@ -19,6 +18,7 @@
     filter: blur(80px);
     opacity: 0.4;
     animation: aurora-float 20s infinite alternate;
+    will-change: transform;
 }
 
 .aurora-1 {
@@ -36,7 +36,6 @@
     width: 60vw;
     height: 60vw;
     background: radial-gradient(circle, rgba(147, 51, 234, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
-    /* Purple hint */
     animation-delay: -5s;
 }
 
@@ -55,11 +54,11 @@
     }
 
     33% {
-        transform: translate(30px, -50px) scale(1.1);
+        transform: translate(30px, -50px) scale(1.05);
     }
 
     66% {
-        transform: translate(-20px, 20px) scale(0.9);
+        transform: translate(-20px, 20px) scale(0.95);
     }
 
     100% {
@@ -67,12 +66,26 @@
     }
 }
 
+/* MONACO EDITOR CONTAINER */
+#monaco-container {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
 /* 2. BENTO GRID LAYOUT */
 .features-grid.bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-auto-rows: minmax(200px, auto);
     gap: 1.5rem;
+    margin-bottom: 8rem;
+    /* Increased for marquee */
+    position: relative;
+    z-index: 2;
 }
 
 .bento-card {
@@ -87,7 +100,7 @@
     flex-direction: column;
     justify-content: space-between;
     z-index: 1;
-    /* For spotlight */
+    will-change: transform;
 }
 
 .bento-card:hover {
@@ -130,7 +143,6 @@
     line-height: 1.5;
 }
 
-/* Responsive Bento */
 @media (max-width: 1024px) {
     .features-grid.bento-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -224,7 +236,6 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Progress Indicators */
 .scroll-progress {
     position: absolute;
     right: 2rem;
@@ -256,9 +267,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 255, 255, 0.06),
-            transparent 40%);
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
     z-index: 3;
     opacity: 0;
     transition: opacity 0.5s;
@@ -278,6 +287,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     margin-bottom: 4rem;
     position: relative;
+    z-index: 5;
 }
 
 .marquee-track {
@@ -341,7 +351,7 @@
     text-shadow: 2px 0 red, -2px 0 blue;
 }
 
-/* 7. GOD-TIER NAVBAR (FLOATING PILL) */
+/* 7. GOD-TIER NAVBAR */
 .navbar {
     position: fixed;
     top: 1.5rem;
@@ -350,14 +360,12 @@
     margin: 0 auto;
     width: fit-content;
     max-width: 95%;
-
     background: rgba(10, 10, 10, 0.6);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 100px;
     padding: 0.5rem 1.5rem;
-    /* Slightly tighter padding */
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
@@ -374,9 +382,7 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    /* Explicit gap to prevent overlap */
     justify-content: center;
-    /* Center items */
 }
 
 .nav-links {
@@ -390,7 +396,6 @@
     align-items: center;
 }
 
-/* Prevent wrapping and shrinking */
 .logo-wrapper,
 .nav-links,
 .nav-actions,
@@ -401,7 +406,6 @@
     flex-shrink: 0;
 }
 
-/* Logo Polish */
 .brand-name {
     font-family: 'Outfit', sans-serif;
     letter-spacing: -0.5px;
@@ -411,7 +415,6 @@
     -webkit-text-fill-color: transparent;
 }
 
-/* Status Indicator Pulse */
 .status-indicator {
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -448,37 +451,57 @@
     }
 }
 
-/* Nav Links Polish */
+/* Nav Links Polish (HOLOGRAPHIC TABS) */
 .nav-tab {
     position: relative;
     color: var(--text-secondary);
     font-weight: 500;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
 }
 
 .nav-tab:hover,
 .nav-tab.active {
     color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.nav-tab:hover {
+    background: linear-gradient(90deg, #fff, var(--primary-color), #fff);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: holographic-shimmer 2s linear infinite;
+}
+
+@keyframes holographic-shimmer {
+    to {
+        background-position: 200% center;
+    }
 }
 
 .nav-tab::after {
     content: '';
     position: absolute;
     bottom: -4px;
-    left: 50%;
-    transform: translateX(-50%) scaleX(0);
-    width: 20px;
+    left: 0;
+    width: 100%;
     height: 2px;
-    background: var(--primary-color);
-    border-radius: 2px;
-    transition: transform 0.3s;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 10px var(--primary-color);
+    opacity: 0;
 }
 
+.nav-tab:hover::after,
 .nav-tab.active::after {
-    transform: translateX(-50%) scaleX(1);
+    transform: scaleX(1);
+    opacity: 1;
 }
 
-/* Button Polish */
 .btn-primary {
     border-radius: 100px;
     box-shadow: 0 0 20px rgba(226, 179, 64, 0.2);
@@ -487,4 +510,517 @@
 .btn-primary:hover {
     box-shadow: 0 0 30px rgba(226, 179, 64, 0.4);
     transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 8. UNIVERSAL TILT */
+.bento-card,
+.feature-card,
+.hub-card {
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* 9. VOID THEME SWITCHER */
+.theme-toggle-nav {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+}
+
+.theme-toggle-nav:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+    transform: rotate(15deg);
+}
+
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10001;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(226, 179, 64, 0.2);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    background: var(--primary-color);
+    color: #000;
+    box-shadow: 0 0 30px var(--primary-color);
+}
+
+/* VOID THEME VARIABLES */
+body.theme-void {
+    --primary-color: #9333ea;
+    --primary-hover: #7e22ce;
+    --secondary-color: #3b82f6;
+    --glow-color: rgba(147, 51, 234, 0.3);
+    --bg-color: #030005;
+    --surface-color: #0f0518;
+    --border-color: #2d1b4e;
+}
+
+body.theme-void .text-gradient {
+    background: linear-gradient(to right, #c084fc, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+body.theme-void .btn-primary {
+    background: linear-gradient(135deg, #9333ea, #3b82f6);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
+    color: #fff;
+}
+
+body.theme-void .aurora-1 {
+    background: radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+body.theme-void .aurora-2 {
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+body.theme-void .navbar {
+    border-color: rgba(147, 51, 234, 0.2);
+}
+
+/* 10. CUSTOM GLASS CONTEXT MENU */
+.custom-context-menu {
+    position: fixed;
+    background: rgba(15, 15, 15, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0.5rem;
+    min-width: 200px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.custom-context-menu.visible {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.menu-item {
+    padding: 0.8rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.2s;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.menu-item i {
+    width: 20px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.menu-separator {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0.5rem 0;
+}
+
+/* GLOBAL SELECTION DISABLE */
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.code-area,
+input,
+textarea,
+.cmd-output {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+}
+
+/* LOADING SCREEN LOGO ANIMATION */
+.loading-logo-img {
+    width: 120px;
+    height: auto;
+    animation: logo-breath 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(226, 179, 64, 0.4));
+}
+
+@keyframes logo-breath {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 20px rgba(226, 179, 64, 0.4));
+    }
+
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 40px rgba(226, 179, 64, 0.8));
+    }
+}
+
+/* 11. SMOKY FADE REVEAL */
+.reveal-text-wrapper {
+    display: block;
+    line-height: 1.2;
+}
+
+.reveal-text-line {
+    display: block;
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateY(0);
+    transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.reveal-text-line.visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+    text-shadow: none;
+}
+
+/* 12. SCROLL DOWN INDICATOR */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.5s ease 1s;
+}
+
+.scroll-indicator.visible {
+    opacity: 0.7;
+}
+
+.mouse-icon {
+    width: 26px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    position: relative;
+}
+
+.mouse-wheel {
+    width: 4px;
+    height: 8px;
+    background: #fff;
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-arrow {
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    transform: rotate(45deg);
+}
+
+/* 13. CONSTELLATION CANVAS */
+.constellation-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* 19. BREATHING BORDERS */
+.bento-card {
+    border: 1px solid var(--border-color);
+    animation: border-breath 4s infinite alternate;
+}
+
+@keyframes border-breath {
+    0% {
+        border-color: var(--border-color);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    50% {
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+
+    100% {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 20px rgba(147, 51, 234, 0.1);
+    }
+}
+
+
+/* 10. CUSTOM GLASS CONTEXT MENU */
+.custom-context-menu {
+    position: fixed;
+    background: rgba(15, 15, 15, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0.5rem;
+    min-width: 200px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.custom-context-menu.visible {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.menu-item {
+    padding: 0.8rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.2s;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.menu-item i {
+    width: 20px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.menu-separator {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0.5rem 0;
+}
+
+/* GLOBAL SELECTION DISABLE */
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.code-area,
+input,
+textarea,
+.cmd-output {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+}
+
+/* LOADING SCREEN LOGO ANIMATION */
+.loading-logo-img {
+    width: 120px;
+    height: auto;
+    animation: logo-breath 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(226, 179, 64, 0.4));
+}
+
+@keyframes logo-breath {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 20px rgba(226, 179, 64, 0.4));
+    }
+
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 40px rgba(226, 179, 64, 0.8));
+    }
+}
+
+/* 11. SMOKY FADE REVEAL */
+.reveal-text-wrapper {
+    display: block;
+    line-height: 1.2;
+}
+
+.reveal-text-line {
+    display: block;
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateY(0);
+    transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.reveal-text-line.visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+    text-shadow: none;
+}
+
+/* 12. SCROLL DOWN INDICATOR */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.5s ease 1s;
+}
+
+.scroll-indicator.visible {
+    opacity: 0.7;
+}
+
+.mouse-icon {
+    width: 26px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    position: relative;
+}
+
+.mouse-wheel {
+    width: 4px;
+    height: 8px;
+    background: #fff;
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-arrow {
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    transform: rotate(45deg);
+}
+
+/* 13. CONSTELLATION CANVAS */
+.constellation-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* 19. BREATHING BORDERS */
+.bento-card {
+    border: 1px solid var(--border-color);
+    animation: border-breath 4s infinite alternate;
+}
+
+@keyframes border-breath {
+    0% {
+        border-color: var(--border-color);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    50% {
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+
+    100% {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 20px rgba(147, 51, 234, 0.1);
+    }
+}
+
+/* 20. GLASSMORPHISM 2.0 */
+.glass-panel,
+.bento-card,
+.navbar,
+.custom-context-menu {
+    /* Simplified Glassmorphism for Performance */
+    background: rgba(15, 5, 24, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
