@@ -555,8 +555,8 @@ window.switchTab = function (tabId) {
         targetContent.classList.add('active');
         targetContent.style.display = 'block'; // Ensure visible
 
-        // Scroll to top to prevent "scrolling down" feeling
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Scroll to top removed per user request
+        // window.scrollTo({ top: 0, behavior: 'smooth' });
 
         // Re-trigger animations for the new tab
         const animations = targetContent.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');

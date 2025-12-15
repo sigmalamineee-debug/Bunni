@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="ultra-premium.css">
     <link rel="stylesheet" href="konami-code.css">
     <link rel="stylesheet" href="god-tier-ui.css">
+    <link rel="stylesheet" href="terminal.css">
+    <link rel="stylesheet" href="command-palette.css">
+    <link rel="stylesheet" href="ui-enhancements.css">
 </head>
 
 <body>
@@ -130,18 +133,27 @@
 
                             <!-- Editor Area -->
                             <div class="editor-container">
-                                <div class="line-numbers">
-                                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
-                                </div>
-                                <div class="code-area">
-                                    <div class="typing-container">
-                                        <span id="typewriter"></span><span class="cursor">|</span>
-                                    </div>
+
+
+                            </div>
+                            <div id="terminal-container" class="terminal-container"
+                                style="padding: 1rem; height: 300px; overflow-y: auto;">
+                                <div id="terminal-output"></div>
+                                <div class="terminal-input-line">
+                                    <span class="terminal-prompt">user@bunni:~$</span>
+                                    <input type="text" id="terminal-input" class="terminal-input" autocomplete="off"
+                                        spellcheck="false">
                                 </div>
                             </div>
+
+
+
+
                         </div>
                     </div>
                 </div>
+
+
 
                 <!-- Scroll Down Indicator -->
                 <div class="scroll-indicator">
@@ -1225,6 +1237,7 @@ api.Init()
             });
         });
     </script>
+    </main>
     <!-- Integrated Enhancements Scripts -->
     <script src="enhancements.js"></script>
     <script src="enhancements-phase2-3.js"></script>
@@ -1232,6 +1245,10 @@ api.Init()
     <script src="ultra-premium.js"></script>
     <script src="konami-code.js"></script>
     <script src="god-tier-ui.js"></script>
+    <script src="terminal.js"></script>
+    <script src="cursor-trail.js"></script>
+    <script src="command-palette.js"></script>
+    <script src="ui-enhancements.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,95 @@
+/* Interactive Terminal Styles */
+.terminal-container {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: #a5b3ce;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 20px;
+    cursor: text;
+}
+
+.terminal-output {
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.terminal-line {
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+}
+
+.terminal-prompt {
+    color: var(--primary-color);
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.terminal-input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    flex-grow: 1;
+    outline: none;
+    caret-color: var(--primary-color);
+}
+
+/* Command Colors */
+.cmd-success {
+    color: #22c55e;
+}
+
+.cmd-error {
+    color: #ef4444;
+}
+
+.cmd-warning {
+    color: #eab308;
+}
+
+.cmd-info {
+    color: #3b82f6;
+}
+
+/* Injection Progress Bar */
+.progress-bar-container {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin: 8px 0;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--primary-color);
+    width: 0%;
+    transition: width 0.2s ease;
+}
+
+/* Scrollbar for Terminal */
+.terminal-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.terminal-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.terminal-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.terminal-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
